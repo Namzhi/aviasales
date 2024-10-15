@@ -1,0 +1,28 @@
+@import '../variables.scss';
+.flight-table__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.flight-table__button {
+  @include unbuttonize;
+
+  height: 8vh;
+  width: 100%;
+  border-radius: 5px;
+  font-family: Open-Sans, serif;
+  font-size: 2vh;
+  padding: 1vh;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+  background: #2196f3;
+}
+@media (min-width: 760px) {
+  .flight-table__button {
+    width: 502px;
+    height: 50px;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+}

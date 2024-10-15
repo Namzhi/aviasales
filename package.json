@@ -1,8 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "t",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -14,18 +13,28 @@
     "format": "prettier ."
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "core-js": "^3.38.0",
+    "date-fns": "^3.6.0",
+    "prop-types": "^15.8.1",
     "ramda": "^0.30.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^4.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.7",
     "@babel/eslint-parser": "^7.25.7",
+    "@babel/preset-react": "^7.24.7",
     "@eslint/js": "^9.12.0",
     "@types/ramda": "^0.30.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
@@ -36,12 +45,26 @@
     "globals": "^15.10.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
+    "normalize.css": "^8.0.1",
     "prettier": "^3.3.2",
+    "sass": "^1.79.4",
     "stylelint": "^16.7.0",
     "stylelint-config-standard": "^36.0.1"
   },
   "lint-staged": {
     "src/*.{js,jsx,hmtl,scss, css}": "prettier --write",
     "src/*.{js,jsx}": "npm run lint:fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

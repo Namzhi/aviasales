@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Open-Sans';
+  src:
+    local('Open Sans'),
+    url('fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open-Sans-bold';
+  src:
+    local('Open Sans Bold'),
+    url('fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype');
+}
+
+$screen-xs: 320px;
+$screen-sm: 576px;
+$screen-md: 768px;
+
+@mixin unbuttonize {
+  // This removes styles added by default to button elements.
+  // For when something should semantically be a button,
+  // but isn't buttony in appearance.
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none; // Just in case we missed anything.
+}

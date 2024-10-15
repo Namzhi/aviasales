@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import './index.css'
-import App from './App'
+import './variables.scss'
+import './mixins.scss'
+import AppBase from './app-base/index.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(<AppBase />)

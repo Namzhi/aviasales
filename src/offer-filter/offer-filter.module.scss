@@ -1,0 +1,59 @@
+@import '../variables.scss';
+.flight-table__offer-filter {
+  margin-bottom: 20px;
+}
+.offer-filter {
+  font-family: 'Open-Sans', serif;
+  font-weight: bold;
+  text-wrap: wrap;
+  font-size: 1.3vh;
+  letter-spacing: 0.5px;
+  text-align: center;
+  width: 100%;
+  //border: 1px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #dfe5ec;
+
+  &__item {
+    @include unbuttonize;
+    width: 100%;
+    height: 7vh;
+    //border: 1px 0px 0px 0px;
+    background: #ffffff;
+    border: 1px solid #dfe5ec;
+    text-align: center;
+    //line-height: 6vh;
+    vertical-align: middle;
+    &--cheapest {
+    }
+
+    &--fastest {
+    }
+
+    &--optimal {
+    }
+    &:focus {
+      background: #2196f3;
+      color: white;
+    }
+  }
+}
+@media (min-width: $screen-sm) {
+  .offer-filter {
+    font-size: 2vh;
+  }
+}
+
+@media (min-width: 760px) {
+  .offer-filter {
+    width: 502px;
+    height: 50px;
+    font-size: 12px;
+    &__item {
+      width: 168px;
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+}
