@@ -26,6 +26,7 @@ function TransferFilter() {
       Object.values(checkboxStat).length > 3 &&
       Object.keys(checkboxStat).every((el) => el === 'allChecked' || checkboxStat[el] === true)
     ) {
+      console.log('alChecked', checkboxStat)
       setCheckboxStat({ ...checkboxStat, allChecked: true })
     }
     dispatch(check(checkboxStat))

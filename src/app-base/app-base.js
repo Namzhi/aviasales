@@ -3,6 +3,7 @@ import TransferFilter from '../transfer-filter'
 import logo from '../images/Logo.png'
 
 import classes from './app-base.module.scss'
+
 function AppBase() {
   return (
     <>
@@ -12,6 +13,7 @@ function AppBase() {
         </div>
         <div className={classes['app__content']}>
           <TransferFilter />
+
           <FlightTable />
         </div>
       </div>

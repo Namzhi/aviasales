@@ -26,6 +26,7 @@
     //line-height: 6vh;
     vertical-align: middle;
     &--cheapest {
+      //background-color: blue;
     }
 
     &--fastest {
@@ -33,7 +34,7 @@
 
     &--optimal {
     }
-    &:focus {
+    &--clicked {
       background: #2196f3;
       color: white;
     }

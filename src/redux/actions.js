@@ -1,34 +1,32 @@
-import { CHECK, FLIGHTS_LOAD, FLIGHT_ID_LOAD } from './types'
+import {
+  CHECK,
+  FLIGHTS_LOAD,
+  CHEAPEST,
+  FASTEST,
+  OPTIMAL,
+  FLIGHTS_CHECKBOX,
+  FIND_CHEAPEST,
+  FIND_FASTEST,
+  FIND_OPTIMAL,
+  LOADER_DISPLAY_OFF,
+  LOADER_DISPLAY_ON,
+  ERROR_DISPLAY_ON,
+  ERROR_DISPLAY_OFF,
+} from './types'
 
 export function check(checkbox) {
-  // console.log(143432)
-  // console.log(checkbox)
   return {
     type: CHECK,
-    // id: null,
     checkbox,
   }
 }
-export function flightIdLoad() {
-  return async function (dispatch) {
-    try {
-      const response = await fetch(' https://aviasales-test-api.kata.academy/search')
-      const jsonData = await response.json()
-      // console.log(143)
-      dispatch({
-        type: FLIGHT_ID_LOAD,
-        id: jsonData.searchId,
-      })
-    } catch {
-      console.log('id error')
-    }
-  }
-}
+
 export function flightsLoad() {
   return async function (dispatch) {
-    console.log('flights')
     try {
-      console.log(999)
+      dispatch(loaderOn())
+      dispatch(errorOff())
+
       const responseId = await fetch('https://aviasales-test-api.kata.academy/search')
       const jsonDataId = await responseId.json()
       const response = await fetch(`https://aviasales-test-api.kata.academy/tickets?searchId=${jsonDataId.searchId}`)
@@ -37,38 +35,73 @@ export function flightsLoad() {
         type: FLIGHTS_LOAD,
         flights: jsonData,
       })
+      dispatch(loaderOff())
     } catch {
-      console.log('flights error')
+      dispatch(errorOn('Ошибка при получении данных с сервера'))
+      dispatch(loaderOff())
     }
   }
 }
-// const response = await fetch(' https://aviasales-test-api.kata.academy/search')
-// const jsonData = await response.json()
-// return dispatch({
-//   type: FLIGHTS_LOAD,
-//   data: jsonData,
-// })
-
-// return async (dispatch) => {
-//   const response = await fetch(' https://aviasales-test-api.kata.academy/search')
-//   const jsonData = await response.json()
-//   console.log(143)
-//   dispatch({
-//     type: FLIGHTS_LOAD,
-//     data: jsonData,
-//   })
-// }
-// console.log(14388888)
-// return async (dispatch) => {
-//   try {
-//     const response = await fetch(' https://aviasales-test-api.kata.academy/search')
-//     const jsonData = await response.json()
-//     console.log(143)
-//     dispatch({
-//       type: FLIGHTS_LOAD,
-//       data: jsonData,
-//     })
-//   } catch {
-//     console.log('error')
-//   }
-// }
+export function cheapFlight(isClicked) {
+  console.log(isClicked)
+  return {
+    type: CHEAPEST,
+    isCheapClicked: isClicked,
+  }
+}
+export function fastFlight(isClicked) {
+  return {
+    type: FASTEST,
+    isFastClicked: isClicked,
+  }
+}
+export function optimalFlight(isClicked) {
+  return {
+    type: OPTIMAL,
+    isOptimalClicked: isClicked,
+  }
+}
+export function flightsCheckbox(checkbox) {
+  return {
+    type: FLIGHTS_CHECKBOX,
+    checkbox: checkbox,
+  }
+}
+export function findCheapest() {
+  return {
+    type: FIND_CHEAPEST,
+  }
+}
+export function findFastest() {
+  return {
+    type: FIND_FASTEST,
+  }
+}
+export function findOptimal() {
+  return {
+    type: FIND_OPTIMAL,
+  }
+}
+export function loaderOn() {
+  return {
+    type: LOADER_DISPLAY_ON,
+  }
+}
+export function loaderOff() {
+  return {
+    type: LOADER_DISPLAY_OFF,
+  }
+}
+export function errorOn(text) {
+  return (dispatch) => {
+    dispatch({
+      type: ERROR_DISPLAY_ON,
+      text,
+    })
+  }
+}
+export function errorOff() {
+  return {
+    type: ERROR_DISPLAY_OFF,
+  }
+}
