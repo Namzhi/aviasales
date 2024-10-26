@@ -1,7 +1,8 @@
 import classes from './flight-item.module.scss'
 function FlightItem(props) {
-  const { price, carrier, segments } = props
+  const { price, carrier, segments } = props.props
   // console.log(carrier)
+  // console.log(props)
   const { origin: originFrom, destination: destinationFrom, stops: stopsFrom, duration: durationFrom } = segments[0]
   const { origin: originTo, destination: destinationTo, stops: stopsTo, duration: durationTo } = segments[1]
   return (

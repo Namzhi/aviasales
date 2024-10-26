@@ -25,6 +25,7 @@
   "plugins": ["react", "prettier", "import"],
   "rules": {
     "prettier/prettier": "warn",
+    "no-unused-vars": "off",
     "linebreak-style": [0, "unix"],
     "quotes": ["error", "single"],
     "semi": "off",
