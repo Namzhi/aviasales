@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { flightsLoad, flightsCheckbox } from '../redux/actions'
-import OfferFilter from '../offer-filter'
-import FlightItem from '../flight-item'
+import OfferFilter from '../Offer-filter'
+import FlightItem from '../Flight-item'
 import Spin from '../Spin'
 
 import classes from './flight-table.module.scss'

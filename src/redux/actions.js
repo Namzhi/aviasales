@@ -25,7 +25,6 @@ export function flightsLoad() {
   return async function (dispatch) {
     try {
       dispatch(loaderOn())
-      dispatch(errorOff())
 
       const responseId = await fetch('https://aviasales-test-api.kata.academy/search')
       const jsonDataId = await responseId.json()
@@ -36,6 +35,7 @@ export function flightsLoad() {
         flights: jsonData,
       })
       dispatch(loaderOff())
+      dispatch(errorOff())
     } catch {
       dispatch(errorOn('Ошибка при получении данных с сервера'))
       dispatch(loaderOff())
@@ -43,7 +43,6 @@ export function flightsLoad() {
   }
 }
 export function cheapFlight(isClicked) {
-  console.log(isClicked)
   return {
     type: CHEAPEST,
     isCheapClicked: isClicked,

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import uniqid from 'uniqid'
 
@@ -53,7 +53,6 @@ function TransferFilter() {
       setCheckboxStat(newCheckbox)
     }
   }
-  console.log(checkbox, 'checkbox')
   return (
     <div className={classes['transfer-filter__wrapper']}>
       <h1>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>

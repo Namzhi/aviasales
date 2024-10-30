@@ -69,8 +69,6 @@ export const sortReducer = (state = initialState, action) => {
         flights = state.flightsCheckbox
       }
       const cheapArray = flights.toSorted((a, b) => a.price - b.price)
-      console.log(flights, cheapArray, 'sort')
-
       return {
         ...state,
         flightsFilter: cheapArray,
@@ -94,7 +92,6 @@ export const sortReducer = (state = initialState, action) => {
     case FIND_OPTIMAL: {
       let flights = state.flights
       if (state.flightsCheckbox.length !== 0) {
-        console.log(state.flightsCheckbox, 234234)
         flights = state.flightsCheckbox
       }
 
@@ -144,7 +141,6 @@ export const sortReducer = (state = initialState, action) => {
           return res
         }
       })
-      console.log('456', flightsCheckbox, flights)
       return {
         ...state,
         flightsCheckbox: flightsCheckbox,

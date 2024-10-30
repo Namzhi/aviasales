@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { cheapFlight, fastFlight, optimalFlight, findCheapest, findFastest, findOptimal } from '../redux/actions'
 
@@ -38,7 +37,7 @@ function OfferFilter() {
     }
   }
   return (
-    <div className={`${classes['offer-filter']} ${classes['flight-table__offer-filter']}`}>
+    <div className={`${classes['Offer-filter']} ${classes['flight-table__offer-filter']}`}>
       <button
         className={`${classes['offer-filter__item']} ${classes['offer-filter__item--cheapest']}`}
         onClick={handleFilter}
