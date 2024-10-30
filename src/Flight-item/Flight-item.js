@@ -1,4 +1,4 @@
-import { format, formatDuration, add } from 'date-fns'
+import { format, add } from 'date-fns'
 
 import classes from './flight-item.module.scss'
 function FlightItem(props) {
@@ -38,11 +38,6 @@ function FlightItem(props) {
       minutes: durationFrom % 60,
     }),
     'hh:mm'
-  )
-
-  const durTo = formatDuration(
-    { hours: Math.round(durationTo / 60), minutes: durationTo % 60 },
-    { format: ['hours', 'minutes'] }
   )
 
   return (
