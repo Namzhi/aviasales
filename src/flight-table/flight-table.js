@@ -7,7 +7,7 @@ import FlightItem from '../flight-item'
 import Spin from '../Spin'
 
 import classes from './flight-table.module.scss'
-function FlightTable(props) {
+function FlightTable() {
   const dispatch = useDispatch()
 
   const [ticketsNum, setTicketsNum] = useState(5)
@@ -41,16 +41,14 @@ function FlightTable(props) {
     }
   })
   const error = useSelector((state) => state.appReducer.error)
-  console.log('error', error)
   useEffect(() => {
     dispatch(flightsLoad())
     dispatch(flightsCheckbox(checkbox))
-  }, [checkbox, offer])
+  }, [checkbox, dispatch, offer])
 
   const handleShowMore = () => {
     setTicketsNum(ticketsNum + 5)
   }
-  console.log('flights', flights)
   const fl = flights.slice(0, ticketsNum)
   return (
     <div className={classes['flight-table__wrapper']}>
@@ -60,7 +58,6 @@ function FlightTable(props) {
       {fl.map((res, index) => (
         <FlightItem key={index} props={res} />
       ))}
-      {/*<FlightItem props = */}
       <button className={classes['flight-table__button']} onClick={handleShowMore}>
         Показать еще 5 билетов!
       </button>
