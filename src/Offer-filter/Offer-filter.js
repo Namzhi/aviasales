@@ -37,7 +37,7 @@ function OfferFilter() {
     }
   }
   return (
-    <div className={`${classes['Offer-filter']} ${classes['flight-table__offer-filter']}`}>
+    <div className={`${classes['offer-filter']} ${classes['flight-table__offer-filter']}`}>
       <button
         className={`${classes['offer-filter__item']} ${classes['offer-filter__item--cheapest']}`}
         onClick={handleFilter}
