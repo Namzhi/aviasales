@@ -1,1 +1,1 @@
-Доступно по (ссылке)(https://aviasales-kohl-five.vercel.app/)
+Доступно по (https://aviasales-kohl-five.vercel.app/)
